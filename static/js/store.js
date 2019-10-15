@@ -163,6 +163,54 @@ function pressButton(){
     localStorage.setItem("cho", JSON.stringify(tItems));
 }
 
+function finalPush(){
+    var cartItems = document.getElementsByClassName('store-items')[0]
+    var cartItem = cartItems.getElementsByClassName('row')
+    for (var i=0; i<cartItem.length; i++){
+        var title = cartItems.getElementsByClassName('item-name')[0]
+        var quantity = cartItems.getElementsByClassName('cart-quantity-input')[0].innerText
+        var price = cartItems.getElementsByClassName('item-price')[0]
+        var totalArray = []
+        var cho={
+            "title" : title,
+            "quantity" : quantity,
+            "price" : price
+        }
+        totalArray.push(cho) 
+       console.log(cho)
+       console.log(totalArray)
+       console.log(title)
+    }
+var total = document.getElementsByClassName=("total-price").innerText
+}
+
+function findTheTotal() {
+    var cartItemContainer = document.getElementsByClassName('store-items')[0]
+    var cartRows = cartItemContainer.getElementsByClassName('row')
+    // var total = 0;
+    var totalArray =[]
+    for (var i = 0; i < cartRows.length; i++){ 
+        var cartRow = cartRows[i]
+        var titleElement = cartRow.getElementsByClassName('item-name')[0]
+        var priceElement = cartRow.getElementsByClassName('item-price')[0]
+        var quantityElement = cartRow.getElementsByClassName('cart-quantity-input')[0]
+        var price =parseFloat( priceElement.innerText.replace('Ghc',''))
+        var quantity = quantityElement.value
+        var myObject = {
+            name : titleElement,
+            priced : priceElement,
+            quantity : quantity
+        };
+        console.log(myObject)
+        totalArray.push(myObject)
+
+        
+
+    }
+    // total = Math.round(total * 100)/100
+    // document.getElementsByClassName('total-price')[0].innerText = 'Ghc'+total
+}
+
 
 // I built this function to get the quantity element.
 function countQuantity(){
