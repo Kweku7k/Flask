@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+    <form action="/test" method="POST" style="margin: 4%">
+        <h4>Please fill out this form to confirm your purchase.</h4>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" name="Name" id="Name" placeholder="John Doe" required>
+        </div>
+        <div class="form-group">
+          <label for="Room">Room Number</label>
+          <input type="number" class="form-control" name="Room" id="Room" placeholder="15" required>
+          <!-- <input type="submit" class="Checkout" placeholder="Checkout"> -->
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="text" class="form-control" name="phone" id="phone" placeholder="0265255592">
+        </div>
+        <div class="form-group">
+            <label for="aphone">Other Number</label>
+            <input type="text" class="form-control" name="aphone" id="aphone" placeholder="*optional*">
+          </div>
+        <div class="form-group">
+          <label for="mdb-select md-form">Hostel</label>
+          <select class="form-control" id="exampleFormControlSelect1">
+            <option>Boys Hostel</option>
+            <option>Pronto</option>
+            <option>Old Girls</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlSelect1">Block</label>
+          <select class="form-control" id="exampleFormControlSelect1">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+          </select>
+        </div>
+       
+        <div class="trick-form">
+
+
+          </div>
+
+
+        <div class="whitespace">
+            <input type = "submit" value="Submit">
+            <!-- <button type="submit" class="button"><a href="thanks.html">Submit</a></button> -->
+          </form>
+
+      
+          <script>
+var storedCho = JSON.parse(localStorage.getItem("cho"));
+  
+// document.getElementsByClassName("food").innerText = localStorage.getItem("tItems");
+var formHolder = document.getElementsByClassName('trick-form')[0]
+    var theForm = document.createElement('div')
+    // var formArray = array.innerHTML
+    var formContent= `
+    <label for = "food">Food</label>
+    <input type="text" class="form-control" id="food" name="food" value="${storedCho}">
+    </div>
+    `
+    theForm.innerHTML = formContent
+    formHolder.append(theForm)
+</script>
+          
+          
+{% endblock %} 

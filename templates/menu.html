@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="{{ url_for('static',filename='js/store.js')}}" async ></script>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <title>The Night Shift</title>             
+  </head>
+
+
+  <body>
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+        <a class="navbar-brand" href="index.html">TNS</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="menu.html">Menu</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="cart.html">Cart</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="menu-card">
+        <div class="search-space">
+          <!-- <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form> -->
+        </div>
+
+        
+        <div class="Option 1">
+            <div class="row" style="margin-left: 2%; margin-right: 2%;">
+                <div class="image-1" >
+                  <img src="{{ url_for('static',filename='img/burger.jpg')}}">
+                  <!-- {{ url_for('static',filename='img/burger.jpg')}}"> -->
+                </div>
+                <div class="content" style="width:60%; ">
+                <div class="title">
+                  <h6 style="font-weight: bold;">Grilled Rice</h6>
+                </div>
+                  <div class="content-p" style="font-size: 15px; color:gray; ">So yeah, this is basically food that </div>
+                </div>
+                <div class="options content-right">
+                    <div class="addcart" style="text-align: right;">
+                    <i align="right" class="fa fa-plus-circle fa-2x"></i>
+                </div>
+                <br>
+                <div class="price" style="font-size: 13px;">
+                    <p align="right">Ghc 12.00</p>
+                </div>
+                </div>
+                
+            </div>
+        </div>
+        <div class="Option 1">
+          <div class="row" style="margin-left: 2%; margin-right: 2%;">
+              <div class="image-1" >
+                  <img class ="ing" src="{{ url_for('static',filename='img/burger.jpg')}}">
+              </div>
+              <div class="content" style="width:60%; ">
+              <div class="title">
+                <h6 style="font-weight: bold;">Grilled Fish</h6>
+              </div>
+                <div class="content-p" style="font-size: 15px; color:gray; ">So yeah, this is basically food that </div>
+              </div>
+              <div class="options content-right">
+                  <div class="addcart" style="text-align: right;">
+                  <i align="right" class="fa fa-plus-circle fa-2x"></i>
+              </div>
+              <br>
+              <div class="price" style="font-size: 13px;">
+                  <p align="right">Ghc 12.00</p>
+              </div>
+              </div>
+              
+          </div>
+      </div>
+      <div class="Option 1">
+        <div class="row" style="margin-left: 2%; margin-right: 2%;">
+            <div class="image-1" >
+                <img src="{{ url_for('static',filename='img/burger.jpg')}}">
+            </div>
+            <div class="content" style="width:60%; ">
+            <div class="title">
+              <h6 style="font-weight: bold;">Grilled Fries</h6>
+            </div>
+              <div class="content-p" style="font-size: 15px; color:gray; ">So yeah, this is basically food that </div>
+            </div>
+            <div class="options content-right">
+                <div class="addcart" style="text-align: right;">
+                <i align="right" class="fa fa-plus-circle fa-2x"></i>
+            </div>
+            <br>
+            <div class="price" style="font-size: 13px;">
+                <p align="right">Ghc 12.00</p>
+            </div>
+            </div>
+            
+        </div>
+    </div>
+              CART
+        <section class="container content-section">
+          <div class="store-items">
+            <!-- <div class="cart-card" style="margin-top: 20px;">
+              <div class="container">
+                <div class="row">
+                  <div class="item-image" >
+                    <img src="img/fastfood.png">
+                  </div>
+                  <div class="item-name" style="width: 40%; font-size: 20px; padding-top: 15px;">
+                    Grilled Rice
+                  </div>
+                  <input class="cart-quantity-input" type="number" value="1" style="height:9%; width: 7%; vertical-align: middle;">
+                  <div class="right-control" style="width: 20%; text-align: right;">
+                  <div class="remove-item">
+                    <i class="fa fa-minus-circle fa-2x"></i>
+                  </div>
+                  <div class="item-price">
+                    <small class="text-muted price">Ghc 30.00</small> 
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+            </div> -->
+            
+            <!-- <div class="cart-card" style="margin-top: 20px;">
+                <div class="container">
+                  <div class="row">
+                    <div class="item-image">
+                      <img src="img/fries.jpg">
+                    </div>
+                    <div class="item-name" style="width: 40%; font-size: 20px; padding-top: 15px;">
+                      Grilled Rice
+                    </div>
+                    <input class="cart-quantity-input" type="number" value="1" style="height:9%; width: 7%; vertical-align: middle;">
+                    <div class="right-control" style="width: 20%; text-align: right;">
+                    <div class="remove-item">
+                      <i class="fa fa-minus-circle fa-2x"></i>
+                    </div>
+                    <div class="item-price">
+                      <small class="text-muted price">Ghc 30.00</small> 
+                      </div>  
+                      
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+              
+            </div> 
+          </section>
+
+            <div class="container">
+                <div class="row">
+                  TOTAl:
+                  <div class="total-price">
+                    Ghc 0.00
+                  </div>
+                </div>
+              </div>
+              
+              <div class="whitespace">
+                
+              </div>
+              <!-- <button class="button">Proceed to checkout</button> -->
+              
+              
+              <!-- <form action class="trick-form"> -->
+                  <form action="/new" method="POST" class="trick-form" style="margin: 4%">
+                    <div class="trick-form">
+
+
+                    </div>
+                <!-- <a class="button" href="form.html">Proceed</a> -->
+                
+                <button type="submit" class="button" onclick="pressButton()"><a href="{{ url_for('new')}}">Submit</a></button>
+                </form>
+              </section>
+        
+         
+          
+          
+      
+      
+
+
+          <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

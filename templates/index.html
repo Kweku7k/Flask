@@ -1,54 +1,76 @@
-{% extends 'base.html' %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-{% block head %}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css')}}">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-{% endblock %}
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <title>The Night Shift</title>             
+  </head>
 
-{% block body %}
-    <form action="/" method="POST" style="margin: 4%">
-        <h4>Please fill out this form to confirm your purchase.</h4>
-        <div class="form-group">
-          <label for="name">Name</label>
-          <input type="text" class="form-control" name="Name" id="Name" placeholder="John Doe" required>
+
+  <body style="background: white;">
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+        <a class="navbar-brand" href="#" style="font-weight:bold">TNS</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="menu.html">Menu</a>
+            </li>      
+            <li class="nav-item">
+              <a class="nav-link" href="cart.html">Cart</a>
+            </li>         
+            
+          </ul>
+         
         </div>
-        <div class="form-group">
-          <label for="Room">Room Number</label>
-          <input type="number" class="form-control" name="Room" id="Room" placeholder="15" required>
-          <!-- <input type="submit" class="Checkout" placeholder="Checkout"> -->
-        </div>
-        <div class="form-group">
-          <label for="phone">Phone Number</label>
-          <input type="text" class="form-control" name="phone" id="phone" placeholder="0265255592">
-        </div>
-        <div class="form-group">
-            <label for="aphone">Other Number</label>
-            <input type="text" class="form-control" name="aphone" id="aphone" placeholder="*optional*">
+      </nav>
+
+
+
+      <div class="container">
+          <div class>
+          <div class>
+              <h4 class="start"> I hope you are hungry?</h4>
           </div>
-        <div class="form-group">
-          <label for="mdb-select md-form">Hostel</label>
-          <select class="form-control" id="exampleFormControlSelect1">
-            <option>Boys Hostel</option>
-            <option>Pronto</option>
-            <option>Old Girls</option>
-          </select>
+          <div class>
+            <h4 class="starter"> I knowwwww right</h4>
         </div>
-        <div class="form-group">
-          <label for="exampleFormControlSelect1">Block</label>
-          <select class="form-control" id="exampleFormControlSelect1">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-            <option>6</option>
-            <option>7</option>
-            <option>8</option>
-          </select>
+        <div class>
+            <p class="starter"> So this part is going to be a paragraph that triggers the audience to expect more than they have invested. Hope you like it.</p>
         </div>
-       
-        <div class="whitespace">
-            <input type = "submit" value="Submit">
-            <!-- <button type="submit" class="button"><a href="thanks.html">Submit</a></button> -->
-          </form>
-          
-{% endblock %} 
+        <div class="start-button">
+            <a href="{{ url_for('menu')}}" style="color: black">Lets get startedddd</a>
+        </div>
+    </div>
+
+
+    </div>
+    <!-- <img src="img/pizza3.jpeg" style="width: 100%; bottom:0; left:0;"> -->
+    <img src="{{ url_for('static',filename='img/pizza3.jpeg')}}" style="width: 100%; bottom:0; left:0;"/>
+    </div>
+
+
+
+          <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="cartstyle.css">
+    <title>The Night Shift</title>
+  </head>
+  <body>
+   
+    <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+      <a class="navbar-brand" href="index.html">TNS</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="menu.html">Menu</a>
+          </li>
+          
+        </ul>
+     
+      </div>
+    </nav>
+
+
+
+
+    
+    
+    <form style="margin: 4%">
+      <h4>Please fill out this form to confirm your purchase.</h4>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" placeholder="John Doe" required>
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="text" class="form-control" id="phone" placeholder="0265255592">
+      </div>
+      <div class="form-group">
+          <label for="phone">Other Number</label>
+          <input type="text" class="form-control" id="phone" placeholder="*optional*">
+        </div>
+      <div class="form-group">
+        <label for="mdb-select md-form">Hostel</label>
+        <select class="form-control" id="exampleFormControlSelect1">
+          <option>Boys Hostel</option>
+          <option>Pronto</option>
+          <option>Old Girls</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlSelect1">Block</label>
+        <select class="form-control" id="exampleFormControlSelect1">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+          <option>6</option>
+          <option>7</option>
+          <option>8</option>
+        </select>
+      </div>
+      
+
+
+      <div class="form-group">
+        <label for="Room">Room Number</label>
+        <input type="number" class="form-control" id="Room" placeholder="15">
+        <!-- <input type="submit" class="Checkout" placeholder="Checkout"> -->
+      </div>
+
+      <div class="form-group">
+        <label for="Room">Room Number</label>
+        <input type="number" class="form-control" id="Room" value="">
+        <!-- <input type="submit" class="Checkout" placeholder="Checkout"> -->
+      </div>
+
+      <div class="form-group">
+          <label for="food">Room Number</label>
+          <input type="number" class="form-control" name="food" id="food" value=${tItems}>
+          <!-- <input type="submit" class="Checkout" placeholder="Checkout"> -->
+        </div>
+      
+      <div class="whitespace">
+        
+        <button type="submit" class="button"><a href="thanks.html">Submit</a></button>
+      </form>
+
+
+
+
+
+
+
+<script>
+var storedCho = JSON.parse(localStorage.getItem("cho"));
+  
+// document.getElementsByClassName("food").innerText = localStorage.getItem("tItems");
+var formHolder = document.getElementsByClassName('trick-form')[0]
+    var theForm = document.createElement('div')
+    // var formArray = array.innerHTML
+    var formContent= `
+    <label for = "food">Food</label>
+    <input type="text" class="form-control" id="food" name="food" value="${storedCho}">
+    </div>
+    `
+    theForm.innerHTML = formContent
+    formHolder.append(theForm)
+</script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
