@@ -1,8 +1,10 @@
 var tItems = [];
+var totalArray = [];
 
 var quantities = document.getElementsByClassName('cart-quantity-input')[0]
 
 // $localStorage.data=tItems
+
 
 
 if(document.readyState=='loading'){
@@ -188,25 +190,29 @@ function findTheTotal() {
     var cartItemContainer = document.getElementsByClassName('store-items')[0]
     var cartRows = cartItemContainer.getElementsByClassName('row')
     // var total = 0;
-    var totalArray =[]
+    // var totalArray =[]
     for (var i = 0; i < cartRows.length; i++){ 
         var cartRow = cartRows[i]
-        var titleElement = cartRow.getElementsByClassName('item-name')[0]
-        var priceElement = cartRow.getElementsByClassName('item-price')[0]
-        var quantityElement = cartRow.getElementsByClassName('cart-quantity-input')[0]
-        var price =parseFloat( priceElement.innerText.replace('Ghc',''))
+        var titleElement = cartRow.getElementsByClassName('item-name')[0].innerText
+        var priceElement = cartRow.getElementsByClassName('item-price')[0].innerText
+        var quantityElement = cartRow.getElementsByClassName('cart-quantity-input')[0].value
+        // var price =parseFloat( priceElement.innerText.replace('Ghc',''))
         var quantity = quantityElement.value
-        var myObject = {
-            name : titleElement,
-            priced : priceElement,
-            quantity : quantity
-        };
-        console.log(myObject)
-        totalArray.push(myObject)
+        // var myObject = {
+        //     name : titleElement,
+        //     priced : priceElement,
+        //     quantity : quantity
+        // };
+        // console.log(myObject)
+        totalArray.push(titleElement)
+        // totalArray.push(priceElement)
+        totalArray.push(quantityElement)
+        console.log(titleElement, quantityElement)
 
+        // localStorage.setItem('storeObj', JSON.stringify(myObj));
         
-
     }
+    localStorage.setItem("Hope",JSON.stringify(totalArray));
     // total = Math.round(total * 100)/100
     // document.getElementsByClassName('total-price')[0].innerText = 'Ghc'+total
 }
