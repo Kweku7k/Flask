@@ -120,20 +120,21 @@ var cartItemNames = cartItemContainer.getElementsByClassName('item-name')
  
 var cartRowContents = `
 <div class="row">
-<div class="item-image" >
-<img src="{{ url_for('static',filename='img/cart.png')}}">
-</div>
-                  <div class="item-name" style="width: 40%; font-size: 20px; padding-top: 15px;">${title}</div>
-                  <input class="cart-quantity-input" type="number" value="1" style="height:9%; width: 7%; vertical-align: middle;">
-                  <div class="right-control" style="width: 20%; text-align: right;">
-                  <div class="remove-item">
-                    <i class="fa fa-minus-circle fa-2x"></i>
-                  </div>
-                  <div class="item-price">
-<small class="text-muted price">${price}</small> 
-                    </div>
+    <div class="item-image" >
+        <img src="static/img/cart.png">
+    </div>
+    <div class="item-name" style="width: 40%; font-size: 20px; padding-top: 15px;">${title}</div>
+    <input class="cart-quantity-input" type="number" value="1" style="height:9%; width: 7%; vertical-align: middle;">
+    <div class="right-control" style="width: 20%; text-align: right;">
+        <div class="remove-item">
+        <i class="fa fa-minus-circle fa-2x"></i>
+        </div>
+        <div class="item-price">
+        <small class="text-muted price">${price}</small> 
+        
+        </div>
                     
-                  </div>`
+</div>`
 // var storeItems = document.
 cartRow.innerHTML = cartRowContents
 cartItemContainer.append(cartRow)
@@ -187,6 +188,7 @@ var total = document.getElementsByClassName=("total-price").innerText
 }
 
 function findTheTotal() {
+    total = 0
     var cartItemContainer = document.getElementsByClassName('store-items')[0]
     var cartRows = cartItemContainer.getElementsByClassName('row')
     // var total = 0;
@@ -194,9 +196,9 @@ function findTheTotal() {
     for (var i = 0; i < cartRows.length; i++){ 
         var cartRow = cartRows[i]
         var titleElement = cartRow.getElementsByClassName('item-name')[0].innerText
-        var priceElement = cartRow.getElementsByClassName('item-price')[0].innerText
+        var priceElement = cartRow.getElementsByClassName('item-price')[0]
         var quantityElement = cartRow.getElementsByClassName('cart-quantity-input')[0].value
-        // var price =parseFloat( priceElement.innerText.replace('Ghc',''))
+        var price =parseFloat( priceElement.innerText.replace('Ghc',''))
         var quantity = quantityElement.value
         // var myObject = {
         //     name : titleElement,
@@ -207,12 +209,17 @@ function findTheTotal() {
         totalArray.push(titleElement)
         // totalArray.push(priceElement)
         totalArray.push(quantityElement)
-        console.log(titleElement, quantityElement)
+        total = total + (price)
+        console.log(total)
 
         // localStorage.setItem('storeObj', JSON.stringify(myObj));
         
     }
+    var totalAmount =[]
+    totalAmount.push(total)
+
     localStorage.setItem("Hope",JSON.stringify(totalArray));
+    localStorage.setItem("Total",JSON.stringify(totalAmount));
     // total = Math.round(total * 100)/100
     // document.getElementsByClassName('total-price')[0].innerText = 'Ghc'+total
 }
@@ -226,6 +233,7 @@ function countQuantity(){
         var cartRow = cartRows[i]
         var quantityElement = cartRow.getElementsByClassName('cart-quantity-input')[0]
         var quantity = quantityElement.value
+        
         console.log(quantity)
 
     }

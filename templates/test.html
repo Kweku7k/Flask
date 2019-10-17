@@ -34,8 +34,8 @@
           </select>
         </div>
         <div class="form-group">
-          <label for="exampleFormControlSelect1">Block</label>
-          <select class="form-control" id="exampleFormControlSelect1">
+          <label for="block">Block</label>
+          <select class="form-control" id="block" name="block">
             <option>1</option>
             <option>2</option>
             <option>3</option>
@@ -52,6 +52,11 @@
 
           </div>
 
+          <div class="total-form">
+
+
+          </div>
+
 
         <div class="whitespace">
             <input type = "submit" value="Submit">
@@ -62,6 +67,7 @@
           <script>
 var storedCho = JSON.parse(localStorage.getItem("cho"));
 var objectCho = JSON.parse(localStorage.getItem("Hope"));
+var totalCho = JSON.parse(localStorage.getItem("Total"));
 // var getObject = JSON.parse(localStorage.getItem('storeObj'))
   
 // document.getElementsByClassName("food").innerText = localStorage.getItem("tItems");
@@ -75,6 +81,17 @@ var formHolder = document.getElementsByClassName('trick-form')[0]
     `
     theForm.innerHTML = formContent
     formHolder.append(theForm)
+
+    var totalHolder = document.getElementsByClassName('total-form')[0]
+    var theTotal = document.createElement('div')
+    // var formArray = array.innerHTML
+    var totalContent= `
+    <label for = "food">Total</label>
+    <input type="text" class="form-control" id="total" name="total" value="${totalCho}">
+    </div>
+    `
+    theTotal.innerHTML = totalContent
+    totalHolder.append(theTotal)
 </script>
           
           

@@ -15,6 +15,8 @@ class Order(db.Model):
     food = db.Column(db.String(1000))
     quantity = db.Column(db.Integer)
     status = db.Column(db.Integer)
+    block = db.Column(db.String(100))
+    total = db.Column(db.String(10))
     date_created = db.Column(db.DateTime, default=datetime.utcnow)
 
     def __repr__(self):
@@ -54,8 +56,10 @@ def index():
         order_anumber = request.form['aphone']
         order_food = request.form['food']
         order_hostel = request.form['hostel']
+        order_block = request.form['block']
+        order_total = request.form['total']
 
-        final_order = Order(name=order_name, pNumber=order_pnumber, room=order_room, aNumber=order_anumber, food=order_food )
+        final_order = Order(name=order_name, pNumber=order_pnumber, room=order_room, aNumber=order_anumber, food=order_food, hostel=order_hostel, block=order_block, total=order_total)
         # user_number = Order(pNumber=order_pnumber)
         # user_room = Order(room=order_room)
         # order_anumber = request.form['aphone']
