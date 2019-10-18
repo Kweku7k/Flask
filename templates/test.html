@@ -9,7 +9,7 @@
         <h4>Please fill out this form to confirm your purchase.</h4>
         <div class="form-group">
           <label for="name">Name</label>
-          <input type="text" class="form-control" name="Name" id="Name" placeholder="John Doe" required>
+          <input type="text" class="form-control" name="Name" id="Name" required>
         </div>
         
         <div class="form-group">
@@ -67,7 +67,8 @@
           <script>
 var storedCho = JSON.parse(localStorage.getItem("cho"));
 var objectCho = JSON.parse(localStorage.getItem("Hope"));
-var totalCho = JSON.parse(localStorage.getItem("Total"));
+// var totalCho = JSON.parse(localStorage.getItem("Total"));
+var totalCho = JSON.parse(localStorage.getItem("finalFigure"));
 // var getObject = JSON.parse(localStorage.getItem('storeObj'))
   
 // document.getElementsByClassName("food").innerText = localStorage.getItem("tItems");

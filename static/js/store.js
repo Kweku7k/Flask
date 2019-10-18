@@ -73,6 +73,7 @@ function quantityChanged(event){
 function addToCartClicked(event){
     // var tItems = [];
     var button = event.target
+    button.style.color="yellow";
     var shopItem = button.parentElement.parentElement.parentElement
     // console.log(shopItem)
     var itemContent = shopItem.getElementsByClassName('content')[0]
@@ -155,7 +156,7 @@ function sendArray(){
     // var formArray = array.innerHTML
     var formContent= `
     <label for = "food">Food</label>
-    <input type="text" class="form-control" id="food" name="food" value="${tItems}">
+    <input type="hidden" class="form-control" id="food" name="food" value="${tItems}">
     </div>
     `
     theForm.innerHTML = formContent
@@ -188,6 +189,7 @@ var total = document.getElementsByClassName=("total-price").innerText
 }
 
 function findTheTotal() {
+    totalArray=[]
     total = 0
     var cartItemContainer = document.getElementsByClassName('store-items')[0]
     var cartRows = cartItemContainer.getElementsByClassName('row')
@@ -209,6 +211,7 @@ function findTheTotal() {
         totalArray.push(titleElement)
         // totalArray.push(priceElement)
         totalArray.push(quantityElement)
+        totalArray.push('  ')
         total = total + (price)
         console.log(total)
 
@@ -260,4 +263,5 @@ function updateCartTotal() {
     }
     total = Math.round(total * 100)/100
     document.getElementsByClassName('total-price')[0].innerText = 'Ghc'+total
+    localStorage.setItem("finalFigure", JSON.stringify(total));
 }

@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+<!-- ------head tag---------- -->
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/table.css')}}">
+{% endblock %}
+<!-- ---------body tag---------- -->
+{% block body %}
+<table>
+    <tr>
+        <th>Id</th>
+        <!-- <th>Name</th>
+        <th>Block</th>
+        <th>Hostel</th>
+        <th>Room</th>
+        <th>Number</th>
+        <th>A. Number</th> -->
+        <th>Food</th>
+        <th>Total</th>
+        <!-- <th>Status</th>
+        <th>Incoming</th> -->
+        <!-- <th>Shipped</th>
+        <th>Delivered</th> -->
+        <!-- <th>Price</th> -->
+    </tr>
+    {% for order in all_orders %}
+    <tr>
+        <th>{{ order.id }}</th>
+        <!-- <th>{{ order.name }}</th>
+        <th>{{ order.block }}</th>
+        <th>{{ order.hostel }}</th>
+        <th>{{order.room}}</th>
+        <th>{{order.pNumber}}</th>
+        <th>{{order.aNumber}}</th> -->
+        <th>{{order.food}}</th>
+        <th>{{order.total}}</th>
+        <!-- <th>{{order.status}}</th>
+        <th>{{order.date_created}}</th> -->
+        <!-- <th>{{order.date_created}}</th>
+        <th>{{order.date_created}}</th> -->
+        <!-- <th>Price</th> -->
+    </tr>
+    {% endfor %}
+    </table>
+{% endblock %}

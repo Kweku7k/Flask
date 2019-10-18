@@ -93,7 +93,21 @@ def new():
 
 @app.route('/vendor')
 def vendor():
+    return render_template('vendor.html')
+
+@app.route('/vendors')
+def vendors():
+    all_orders = Order.query.order_by(Order.date_created).all()
+    return render_template('vendorportal.html', all_orders=all_orders)
+
+@app.route('/delivery')
+def delivery():
     return render_template('delivery.html')
+
+@app.route('/deliveryportal')
+def deliveryportal():
+    all_orders = Order.query.order_by(Order.date_created).all()
+    return render_template('deliveryportal.html', all_orders=all_orders)
 
 
 if __name__ == "__main__":
