@@ -183,3 +183,9 @@ section .section-title {
         padding: 3%;
         
     }
+.invoice-message{
+    text-align: center;
+}
+.invoice-head{
+    font-size: 20px;
+}

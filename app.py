@@ -109,6 +109,11 @@ def deliveryportal():
     all_orders = Order.query.order_by(Order.date_created).all()
     return render_template('deliveryportal.html', all_orders=all_orders)
 
+@app.route('/invoice')
+def invoice():
+    return render_template('invoice.html')
+
+
 
 if __name__ == "__main__":
     app.run(debug=True)

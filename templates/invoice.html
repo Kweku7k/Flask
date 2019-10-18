@@ -1,0 +1,49 @@
+{% extends 'base.html'%}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static',filename='css/style.css')}}">
+{% endblock %}
+
+{% block body %}
+
+<nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+    <a class="navbar-brand" href="index.html">TNS</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="menu.html">Menu</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="cart.html">Cart</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="menu-card">
+    <div class="search-space">
+    </div>
+     <div class="invoice-message">
+             <h1 class="invoice-head">Thank you for using The Night Shift </h1>
+         <div class="invoice-body">
+            <h4>Please review your cart before you proceed to checkout</h4>
+         </div>
+         <hr>
+         <!-- <div class="container"> -->
+         <div class="row">
+          <h6>Food goes here</h6>
+          <h6>Quantity</h6>
+          <h6>Price</h6>
+          </div>
+         <!-- </div> -->
+     </div>
+    </div>
+
+
+{% endblock %}
